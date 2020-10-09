@@ -1,5 +1,5 @@
 import React from "react";
-import GameGrid from "./Grid";
+import GameGrid from "./GameGrid";
 import Container from "react-bootstrap/Container";
 
 function onTileClick() {}
