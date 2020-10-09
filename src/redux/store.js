@@ -1,6 +1,6 @@
 import { createStore } from "redux";
-import { pathFindingVisualized } from "./reducers";
+import { gridReducer } from "./reducers";
 
-const store = createStore(pathFindingVisualized);
+const store = createStore(gridReducer);
 
 export default store;

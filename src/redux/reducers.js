@@ -1,19 +1,19 @@
 import { SET_START_TILE, SET_END_TILE, SELECT_TILE_TYPE } from "./actions";
 
+class Tile {
+  constructor() {
+    this.isFilled = false;
+  }
+}
+
 const initialState = {
-  selectedTileType: "Start",
-  startTile: null,
-  endTile: null,
+  grid: Array.from({ length: 100 }, (v, i) => Array.from({ length: 100 }, (y, j) => new Tile())),
 };
 
-export function pathFindingVisualized(state = initialState, action) {
+export function gridReducer(state = initialState, action) {
   switch (action.type) {
-    case SET_START_TILE:
-      return { ...state, startTile: action.startTile };
-    case SET_END_TILE:
-      return { ...state, endTile: action.endTile };
-    case SELECT_TILE_TYPE:
-      return { ...state, selectedTileType: action.selectedTileType };
+    case "grid/updateGrid":
+      return { ...state, grid: action.updatedGrid };
     default:
       return state;
   }
