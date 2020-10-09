@@ -1,23 +1,25 @@
 {
   "files": {
-    "main.css": "/game-of-life/static/css/main.d18dee0f.chunk.css",
-    "main.js": "/game-of-life/static/js/main.d1e8d905.chunk.js",
-    "main.js.map": "/game-of-life/static/js/main.d1e8d905.chunk.js.map",
+    "main.css": "/game-of-life/static/css/main.69eda509.chunk.css",
+    "main.js": "/game-of-life/static/js/main.cc453f80.chunk.js",
+    "main.js.map": "/game-of-life/static/js/main.cc453f80.chunk.js.map",
     "runtime-main.js": "/game-of-life/static/js/runtime-main.1dafd470.js",
     "runtime-main.js.map": "/game-of-life/static/js/runtime-main.1dafd470.js.map",
-    "static/js/2.c0d248af.chunk.js": "/game-of-life/static/js/2.c0d248af.chunk.js",
-    "static/js/2.c0d248af.chunk.js.map": "/game-of-life/static/js/2.c0d248af.chunk.js.map",
+    "static/css/2.d9ad5f5c.chunk.css": "/game-of-life/static/css/2.d9ad5f5c.chunk.css",
+    "static/js/2.63daa0d0.chunk.js": "/game-of-life/static/js/2.63daa0d0.chunk.js",
+    "static/js/2.63daa0d0.chunk.js.map": "/game-of-life/static/js/2.63daa0d0.chunk.js.map",
     "index.html": "/game-of-life/index.html",
-    "precache-manifest.cf8a6d7bada3d276500cb9c6e06c1b10.js": "/game-of-life/precache-manifest.cf8a6d7bada3d276500cb9c6e06c1b10.js",
+    "precache-manifest.ce73e82e2855ae7f5d383f814839ef46.js": "/game-of-life/precache-manifest.ce73e82e2855ae7f5d383f814839ef46.js",
     "service-worker.js": "/game-of-life/service-worker.js",
-    "static/css/main.d18dee0f.chunk.css.map": "/game-of-life/static/css/main.d18dee0f.chunk.css.map",
-    "static/js/2.c0d248af.chunk.js.LICENSE.txt": "/game-of-life/static/js/2.c0d248af.chunk.js.LICENSE.txt",
-    "static/media/logo.svg": "/game-of-life/static/media/logo.8dad8028.svg"
+    "static/css/2.d9ad5f5c.chunk.css.map": "/game-of-life/static/css/2.d9ad5f5c.chunk.css.map",
+    "static/css/main.69eda509.chunk.css.map": "/game-of-life/static/css/main.69eda509.chunk.css.map",
+    "static/js/2.63daa0d0.chunk.js.LICENSE.txt": "/game-of-life/static/js/2.63daa0d0.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.1dafd470.js",
-    "static/js/2.c0d248af.chunk.js",
-    "static/css/main.d18dee0f.chunk.css",
-    "static/js/main.d1e8d905.chunk.js"
+    "static/css/2.d9ad5f5c.chunk.css",
+    "static/js/2.63daa0d0.chunk.js",
+    "static/css/main.69eda509.chunk.css",
+    "static/js/main.cc453f80.chunk.js"
   ]
 }
