@@ -1,13 +1,13 @@
-import { SET_START_TILE, SET_END_TILE, SELECT_TILE_TYPE } from "./actions";
-
 class Tile {
-  constructor() {
+  constructor(x, y) {
     this.isFilled = false;
+    this.x = x;
+    this.y = y;
   }
 }
 
 const initialState = {
-  grid: Array.from({ length: 100 }, (v, i) => Array.from({ length: 100 }, (y, j) => new Tile())),
+  grid: Array.from({ length: 50 }, (v, y) => Array.from({ length: 50 }, (w, x) => new Tile(x, y))),
 };
 
 export function gridReducer(state = initialState, action) {

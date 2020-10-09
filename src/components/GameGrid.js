@@ -6,16 +6,15 @@ import Container from "react-bootstrap/Container";
 import VisualTile from "./VisualTile";
 
 function GameGrid(props) {
-  props.grid[5][10].isFilled = true;
   return (
     <Container style={{ width: 600, height: "auto" }}>
       <ResponsiveEmbed>
         <Table bordered size="sm">
           <tbody>
             {props.grid.map((row) => (
-              <tr>
+              <tr key={"row: " + row[0].y}>
                 {row.map((tile) => (
-                  <VisualTile tile={tile} />
+                  <VisualTile tile={tile} key={"x: " + tile.x + ", y: " + tile.y} />
                 ))}
               </tr>
             ))}
