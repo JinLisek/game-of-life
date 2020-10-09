@@ -2,6 +2,7 @@ import React from "react";
 import Table from "react-bootstrap/Table";
 import ResponsiveEmbed from "react-bootstrap/ResponsiveEmbed";
 import Container from "react-bootstrap/Container";
+import VisualTile from "./Tile";
 
 class Tile {
   constructor() {
@@ -12,8 +13,8 @@ class Tile {
 class GameGrid extends React.Component {
   constructor(props) {
     super(props);
-    let grid = Array.from({ length: 100 }, (v, i) => Array.from({ length: 100 }, (y, j) => new Tile()));
-    this.state = { grid: grid };
+    this.state = { grid: Array.from({ length: 100 }, (v, i) => Array.from({ length: 100 }, (y, j) => new Tile())) };
+    this.state.grid[5][10].isFilled = true;
   }
 
   render() {
@@ -25,7 +26,7 @@ class GameGrid extends React.Component {
               {this.state.grid.map((row) => (
                 <tr>
                   {row.map((tile) => (
-                    <td class={tile.isFilled ? "bg-dark" : "bg-light"}></td>
+                    <VisualTile tile={tile} />
                   ))}
                 </tr>
               ))}
