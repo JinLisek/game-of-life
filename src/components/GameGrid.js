@@ -5,10 +5,6 @@ import ResponsiveEmbed from "react-bootstrap/ResponsiveEmbed";
 import Container from "react-bootstrap/Container";
 import VisualCell from "./VisualCell";
 
-function getRandomInt(max) {
-  return Math.floor(Math.random() * Math.floor(max));
-}
-
 function isNeighbourAlive(x, y, grid) {
   if (x < 0 || y < 0 || x >= grid.length || y >= grid[0].length) return false;
   return grid[x][y].isAlive;
@@ -17,31 +13,30 @@ function isNeighbourAlive(x, y, grid) {
 class GameGrid extends React.Component {
   componentDidMount = () => {
     this.timerId = setInterval(() => {
-      const maxSize = this.props.grid.length;
-      const randomX = getRandomInt(maxSize);
-      const randomY = getRandomInt(maxSize);
-      const oldGrid = this.props.grid;
-      let updatedGrid = [...oldGrid];
+      if (this.props.gameState === "RUNNING") {
+        const oldGrid = this.props.grid;
+        let updatedGrid = [...oldGrid];
 
-      for (let y = 0; y < updatedGrid.length; ++y) {
-        for (let x = 0; x < updatedGrid[y].length; ++x) {
-          let aliveNeighbours = 0;
-          if (isNeighbourAlive(x - 1, y - 1, oldGrid)) aliveNeighbours++;
-          if (isNeighbourAlive(x, y - 1, oldGrid)) aliveNeighbours++;
-          if (isNeighbourAlive(x + 1, y - 1, oldGrid)) aliveNeighbours++;
-          if (isNeighbourAlive(x - 1, y, oldGrid)) aliveNeighbours++;
-          if (isNeighbourAlive(x + 1, y, oldGrid)) aliveNeighbours++;
-          if (isNeighbourAlive(x - 1, y + 1, oldGrid)) aliveNeighbours++;
-          if (isNeighbourAlive(x, y + 1, oldGrid)) aliveNeighbours++;
-          if (isNeighbourAlive(x + 1, y + 1, oldGrid)) aliveNeighbours++;
+        for (let y = 0; y < updatedGrid.length; ++y) {
+          for (let x = 0; x < updatedGrid[y].length; ++x) {
+            let aliveNeighbours = 0;
+            if (isNeighbourAlive(x - 1, y - 1, oldGrid)) aliveNeighbours++;
+            if (isNeighbourAlive(x, y - 1, oldGrid)) aliveNeighbours++;
+            if (isNeighbourAlive(x + 1, y - 1, oldGrid)) aliveNeighbours++;
+            if (isNeighbourAlive(x - 1, y, oldGrid)) aliveNeighbours++;
+            if (isNeighbourAlive(x + 1, y, oldGrid)) aliveNeighbours++;
+            if (isNeighbourAlive(x - 1, y + 1, oldGrid)) aliveNeighbours++;
+            if (isNeighbourAlive(x, y + 1, oldGrid)) aliveNeighbours++;
+            if (isNeighbourAlive(x + 1, y + 1, oldGrid)) aliveNeighbours++;
 
-          let cell = updatedGrid[x][y];
-          if (!cell.isAlive && aliveNeighbours == 3) cell.isAlive = true;
-          else if (cell.isAlive && (aliveNeighbours < 2 || aliveNeighbours > 3)) cell.isAlive = false;
+            let cell = updatedGrid[x][y];
+            if (!cell.isAlive && aliveNeighbours === 3) cell.isAlive = true;
+            else if (cell.isAlive && (aliveNeighbours < 2 || aliveNeighbours > 3)) cell.isAlive = false;
+          }
         }
-      }
 
-      this.props.updateGrid(updatedGrid);
+        this.props.updateGrid(updatedGrid);
+      }
     }, 1000);
   };
 
@@ -70,8 +65,8 @@ class GameGrid extends React.Component {
   };
 }
 
-const mapStateToProps = ({ grid }) => {
-  return { grid };
+const mapStateToProps = ({ game, grid }) => {
+  return { gameState: game.state, grid };
 };
 
 const mapDispatchToProps = (dispatch) => {

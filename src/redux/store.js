@@ -1,6 +1,6 @@
-import { createStore } from "redux";
-import { gridReducer } from "./reducers";
+import { combineReducers, createStore } from "redux";
+import { gameReducer, gridReducer } from "./reducers";
 
-const store = createStore(gridReducer);
+const store = createStore(combineReducers({ game: gameReducer, grid: gridReducer }));
 
 export default store;
