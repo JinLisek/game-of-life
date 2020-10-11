@@ -11,7 +11,7 @@ function getRandomInt(max) {
 
 function isNeighbourAlive(x, y, grid) {
   if (x < 0 || y < 0 || x >= grid.length || y >= grid[0].length) return false;
-  return grid[x][y].isFilled;
+  return grid[x][y].isAlive;
 }
 
 class GameGrid extends React.Component {
@@ -36,8 +36,8 @@ class GameGrid extends React.Component {
           if (isNeighbourAlive(x + 1, y + 1, oldGrid)) aliveNeighbours++;
 
           let cell = updatedGrid[x][y];
-          if (!cell.isFilled && aliveNeighbours == 3) cell.isFilled = true;
-          else if (cell.isFilled && (aliveNeighbours < 2 || aliveNeighbours > 3)) cell.isFilled = false;
+          if (!cell.isAlive && aliveNeighbours == 3) cell.isAlive = true;
+          else if (cell.isAlive && (aliveNeighbours < 2 || aliveNeighbours > 3)) cell.isAlive = false;
         }
       }
 

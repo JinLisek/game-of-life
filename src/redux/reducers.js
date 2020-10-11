@@ -1,6 +1,6 @@
 class Tile {
   constructor(x, y) {
-    this.isFilled = false;
+    this.isAlive = false;
     this.x = x;
     this.y = y;
   }

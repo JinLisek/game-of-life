@@ -14,12 +14,12 @@ class VisualTile extends React.Component {
 
   onClick = () => {
     let newTile = this.state.tile;
-    newTile.isFilled = !newTile.isFilled;
+    newTile.isAlive = !newTile.isAlive;
     this.setState({ tile: newTile });
   };
 
   getTileColor = () => {
-    return this.state.tile.isFilled ? "bg-dark" : "bg-light";
+    return this.state.tile.isAlive ? "bg-dark" : "bg-light";
   };
 }
 
