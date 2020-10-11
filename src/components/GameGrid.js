@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import Table from "react-bootstrap/Table";
 import ResponsiveEmbed from "react-bootstrap/ResponsiveEmbed";
 import Container from "react-bootstrap/Container";
-import VisualTile from "./VisualTile";
+import VisualCell from "./VisualCell";
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
@@ -58,7 +58,7 @@ class GameGrid extends React.Component {
               {this.props.grid.map((row) => (
                 <tr key={"row: " + row[0].y}>
                   {row.map((tile) => (
-                    <VisualTile tile={tile} key={"x: " + tile.x + ", y: " + tile.y} />
+                    <VisualCell tile={tile} key={"x: " + tile.x + ", y: " + tile.y} />
                   ))}
                 </tr>
               ))}

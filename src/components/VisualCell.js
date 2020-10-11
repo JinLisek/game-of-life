@@ -1,6 +1,6 @@
 import React from "react";
 
-class VisualTile extends React.Component {
+class VisualCell extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -23,4 +23,4 @@ class VisualTile extends React.Component {
   };
 }
 
-export default VisualTile;
+export default VisualCell;

@@ -1,4 +1,4 @@
-class Tile {
+class Cell {
   constructor(x, y) {
     this.isAlive = false;
     this.x = x;
@@ -7,7 +7,7 @@ class Tile {
 }
 
 const initialState = {
-  grid: Array.from({ length: 50 }, (v, y) => Array.from({ length: 50 }, (w, x) => new Tile(x, y))),
+  grid: Array.from({ length: 50 }, (v, y) => Array.from({ length: 50 }, (w, x) => new Cell(x, y))),
 };
 
 export function gridReducer(state = initialState, action) {
