@@ -1,25 +1,25 @@
 {
   "files": {
     "main.css": "/game-of-life/static/css/main.69eda509.chunk.css",
-    "main.js": "/game-of-life/static/js/main.cc453f80.chunk.js",
-    "main.js.map": "/game-of-life/static/js/main.cc453f80.chunk.js.map",
+    "main.js": "/game-of-life/static/js/main.1012eecd.chunk.js",
+    "main.js.map": "/game-of-life/static/js/main.1012eecd.chunk.js.map",
     "runtime-main.js": "/game-of-life/static/js/runtime-main.1dafd470.js",
     "runtime-main.js.map": "/game-of-life/static/js/runtime-main.1dafd470.js.map",
     "static/css/2.d9ad5f5c.chunk.css": "/game-of-life/static/css/2.d9ad5f5c.chunk.css",
-    "static/js/2.63daa0d0.chunk.js": "/game-of-life/static/js/2.63daa0d0.chunk.js",
-    "static/js/2.63daa0d0.chunk.js.map": "/game-of-life/static/js/2.63daa0d0.chunk.js.map",
+    "static/js/2.2ef0118e.chunk.js": "/game-of-life/static/js/2.2ef0118e.chunk.js",
+    "static/js/2.2ef0118e.chunk.js.map": "/game-of-life/static/js/2.2ef0118e.chunk.js.map",
     "index.html": "/game-of-life/index.html",
-    "precache-manifest.ce73e82e2855ae7f5d383f814839ef46.js": "/game-of-life/precache-manifest.ce73e82e2855ae7f5d383f814839ef46.js",
+    "precache-manifest.625a7f230d2d07782fce20a76df30186.js": "/game-of-life/precache-manifest.625a7f230d2d07782fce20a76df30186.js",
     "service-worker.js": "/game-of-life/service-worker.js",
     "static/css/2.d9ad5f5c.chunk.css.map": "/game-of-life/static/css/2.d9ad5f5c.chunk.css.map",
     "static/css/main.69eda509.chunk.css.map": "/game-of-life/static/css/main.69eda509.chunk.css.map",
-    "static/js/2.63daa0d0.chunk.js.LICENSE.txt": "/game-of-life/static/js/2.63daa0d0.chunk.js.LICENSE.txt"
+    "static/js/2.2ef0118e.chunk.js.LICENSE.txt": "/game-of-life/static/js/2.2ef0118e.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.1dafd470.js",
     "static/css/2.d9ad5f5c.chunk.css",
-    "static/js/2.63daa0d0.chunk.js",
+    "static/js/2.2ef0118e.chunk.js",
     "static/css/main.69eda509.chunk.css",
-    "static/js/main.cc453f80.chunk.js"
+    "static/js/main.1012eecd.chunk.js"
   ]
 }
