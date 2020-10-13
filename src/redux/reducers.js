@@ -1,10 +1,4 @@
-class Cell {
-  constructor(x, y) {
-    this.isAlive = false;
-    this.x = x;
-    this.y = y;
-  }
-}
+import Cell from "../logic/Cell";
 
 const initialGrid = Array.from({ length: 50 }, (v, y) => Array.from({ length: 50 }, (w, x) => new Cell(x, y)));
 
