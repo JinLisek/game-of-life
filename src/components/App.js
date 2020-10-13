@@ -3,6 +3,7 @@ import GameGrid from "./GameGrid";
 import Container from "react-bootstrap/Container";
 import StartButton from "./StartButton";
 import StopButton from "./StopButton";
+import ClearButton from "./ClearButton";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <GameGrid />
       <StartButton />
       <StopButton />
+      <ClearButton />
     </Container>
   );
 }
