@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { cloneGrid } from "../logic/Grid";
 
 class VisualCell extends React.Component {
   render = () => {
@@ -7,7 +8,7 @@ class VisualCell extends React.Component {
   };
 
   onClick = () => {
-    let newGrid = [...this.props.grid];
+    let newGrid = cloneGrid(this.props.grid);
     let cell = newGrid[this.props.cellPos.y][this.props.cellPos.x];
     cell.isAlive = !cell.isAlive;
     this.props.updateGrid(newGrid);

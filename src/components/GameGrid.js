@@ -4,10 +4,11 @@ import Table from "react-bootstrap/Table";
 import ResponsiveEmbed from "react-bootstrap/ResponsiveEmbed";
 import Container from "react-bootstrap/Container";
 import VisualCell from "./VisualCell";
+import { cloneGrid } from "../logic/Grid";
 
 function isNeighbourAlive(x, y, grid) {
-  if (x < 0 || y < 0 || x >= grid.length || y >= grid[0].length) return false;
-  return grid[x][y].isAlive;
+  if (x < 0 || y < 0 || y >= grid.length || x >= grid[0].length) return false;
+  return grid[y][x].isAlive;
 }
 
 class GameGrid extends React.Component {
@@ -15,7 +16,7 @@ class GameGrid extends React.Component {
     this.timerId = setInterval(() => {
       if (this.props.gameState === "RUNNING") {
         const oldGrid = this.props.grid;
-        let updatedGrid = [...oldGrid];
+        let updatedGrid = cloneGrid(oldGrid);
 
         for (let y = 0; y < updatedGrid.length; ++y) {
           for (let x = 0; x < updatedGrid[y].length; ++x) {
@@ -29,7 +30,7 @@ class GameGrid extends React.Component {
             if (isNeighbourAlive(x, y + 1, oldGrid)) aliveNeighbours++;
             if (isNeighbourAlive(x + 1, y + 1, oldGrid)) aliveNeighbours++;
 
-            let cell = updatedGrid[x][y];
+            let cell = updatedGrid[y][x];
             if (!cell.isAlive && aliveNeighbours === 3) cell.isAlive = true;
             else if (cell.isAlive && (aliveNeighbours < 2 || aliveNeighbours > 3)) cell.isAlive = false;
           }
