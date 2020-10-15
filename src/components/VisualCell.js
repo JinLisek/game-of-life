@@ -1,26 +1,31 @@
 import React from "react";
+import { connect } from "react-redux";
 
 class VisualCell extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      tile: props.tile,
-    };
-  }
-
   render = () => {
     return <td onClick={this.onClick} className={this.getTileColor()}></td>;
   };
 
   onClick = () => {
-    let newTile = this.state.tile;
-    newTile.isAlive = !newTile.isAlive;
-    this.setState({ tile: newTile });
+    let newGrid = [...this.props.grid];
+    let cell = newGrid[this.props.cellPos.y][this.props.cellPos.x];
+    cell.isAlive = !cell.isAlive;
+    this.props.updateGrid(newGrid);
   };
 
   getTileColor = () => {
-    return this.state.tile.isAlive ? "bg-dark" : "bg-light";
+    return this.props.grid[this.props.cellPos.y][this.props.cellPos.x].isAlive ? "bg-dark" : "bg-light";
   };
 }
 
-export default VisualCell;
+const mapStateToProps = ({ game, grid }) => {
+  return { gameState: game.state, grid };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    updateGrid: (updatedGrid) => dispatch({ type: "grid/updateGrid", updatedGrid: updatedGrid }),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(VisualCell);

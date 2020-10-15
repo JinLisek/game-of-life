@@ -1,20 +1,15 @@
 import Cell from "../logic/Cell";
 
-const initialGrid = Array.from({ length: 50 }, (v, y) => Array.from({ length: 50 }, (w, x) => new Cell(x, y)));
+const createGrid = () => {
+  return Array.from({ length: 10 }, (v, y) => Array.from({ length: 10 }, (w, x) => new Cell(x, y)));
+};
 
-export function gridReducer(state = initialGrid, action) {
+export function gridReducer(state = createGrid(), action) {
   switch (action.type) {
     case "grid/updateGrid":
       return action.updatedGrid;
     case "grid/clearGrid":
-      let clearedGrid = [...initialGrid];
-
-      for (let y = 0; y < clearedGrid.length; ++y) {
-        for (let x = 0; x < clearedGrid[y].length; ++x) {
-          clearedGrid[x][y].isAlive = false;
-        }
-      }
-      return clearedGrid;
+      return createGrid();
     default:
       return state;
   }

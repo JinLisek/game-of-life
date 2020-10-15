@@ -53,7 +53,7 @@ class GameGrid extends React.Component {
               {this.props.grid.map((row) => (
                 <tr key={"row: " + row[0].y}>
                   {row.map((tile) => (
-                    <VisualCell tile={tile} key={"x: " + tile.x + ", y: " + tile.y} />
+                    <VisualCell cellPos={{ x: tile.x, y: tile.y }} key={"x: " + tile.x + ", y: " + tile.y} />
                   ))}
                 </tr>
               ))}
